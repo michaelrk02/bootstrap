@@ -21,6 +21,7 @@
     white-space: nowrap;
     pointer-events: none;
     border: $input-border-width solid transparent; // Required for aligning label's text with the input as it affects inner box model
+    color: shade-color($input-bg, 40%);
     transform-origin: 0 0;
     @include transition($form-floating-transition);
   }

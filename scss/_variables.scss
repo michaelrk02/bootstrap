@@ -297,15 +297,16 @@ $cyans: (
 ) !default;
 // fusv-enable
 
-$sibisa-theme:  $purple-500;
+$sibisa-theme:  $purple-700;
 $sibisa-dark:   $purple-900;
+$sibisa-accent: $indigo-400;
 $sibisa-action: $pink-500;
 
 // scss-docs-start theme-color-variables
 $primary:       $sibisa-action !default;
 $secondary:     $sibisa-dark !default;
 $success:       $teal-300 !default;
-$info:          $cyan-400 !default;
+$info:          $sibisa-accent !default;
 $warning:       $yellow-400 !default;
 $danger:        $red-300 !default;
 $light:         $gray-100 !default;
@@ -410,7 +411,7 @@ $body-text-align:           null !default;
 //
 // Style anchor elements.
 
-$link-color:                              $info !default;
+$link-color:                              tint-color($info, 60%) !default;
 $link-decoration:                         underline !default;
 $link-shade-percentage:                   20% !default;
 $link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
@@ -610,7 +611,7 @@ $display-font-sizes: (
 
 $display-font-family: null !default;
 $display-font-style:  null !default;
-$display-font-weight: 300 !default;
+$display-font-weight: bold !default;
 $display-line-height: $headings-line-height !default;
 // scss-docs-end display-headings
 
@@ -697,7 +698,7 @@ $table-group-separator-color: currentcolor !default;
 
 $table-caption-color:         $text-muted !default;
 
-$table-bg-scale:              -80% !default;
+$table-bg-scale:              60% !default;
 // scss-docs-end table-variables
 
 // scss-docs-start table-loop
@@ -828,13 +829,13 @@ $input-padding-y-lg:                    $input-btn-padding-y-lg !default;
 $input-padding-x-lg:                    $input-btn-padding-x-lg !default;
 $input-font-size-lg:                    $input-btn-font-size-lg !default;
 
-$input-bg:                              $body-bg !default;
-$input-disabled-color:                  shade-color($body-color, 20%) !default;
-$input-disabled-bg:                     shade-color($input-bg, 20%) !default;
+$input-bg:                              $gray-200 !default;
+$input-disabled-color:                  $gray-900 !default;
+$input-disabled-bg:                     $gray-500 !default;
 $input-disabled-border-color:           null !default;
 
-$input-color:                           $body-color !default;
-$input-border-color:                    $gray-400 !default;
+$input-color:                           $gray-900 !default;
+$input-border-color:                    $white !default;
 $input-border-width:                    $input-btn-border-width !default;
 $input-box-shadow:                      $box-shadow-inset !default;
 
@@ -922,8 +923,8 @@ $form-switch-checked-bg-position: right center !default;
 $input-group-addon-padding-y:           $input-padding-y !default;
 $input-group-addon-padding-x:           $input-padding-x !default;
 $input-group-addon-font-weight:         $input-font-weight !default;
-$input-group-addon-color:               $input-color !default;
-$input-group-addon-bg:                  shade-color($body-bg, 40%) !default;
+$input-group-addon-color:               $input-disabled-color !default;
+$input-group-addon-bg:                  $input-disabled-bg !default;
 $input-group-addon-border-color:        $input-border-color !default;
 // scss-docs-end input-group-variables
 
@@ -942,7 +943,7 @@ $form-select-disabled-bg:           $input-disabled-bg !default;
 $form-select-disabled-border-color: $input-disabled-border-color !default;
 $form-select-bg-position:           right $form-select-padding-x center !default;
 $form-select-bg-size:               16px 12px !default; // In pixels because image dimensions
-$form-select-indicator-color:       $body-color !default;
+$form-select-indicator-color:       $input-color !default;
 $form-select-indicator:             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>") !default;
 
 $form-select-feedback-icon-padding-end: $form-select-padding-x * 2.5 + $form-select-indicator-padding !default;
@@ -1005,9 +1006,9 @@ $form-floating-padding-x:         $input-padding-x !default;
 $form-floating-padding-y:         1rem !default;
 $form-floating-input-padding-t:   1.625rem !default;
 $form-floating-input-padding-b:   .625rem !default;
-$form-floating-label-opacity:     .65 !default;
+$form-floating-label-opacity:     1 !default;
 $form-floating-label-transform:   scale(.85) translateY(-.5rem) translateX(.15rem) !default;
-$form-floating-transition:        opacity .1s ease-in-out, transform .1s ease-in-out !default;
+$form-floating-transition:        transform .1s ease-in-out !default;
 // scss-docs-end form-floating-variables
 
 // Form validation
@@ -1213,7 +1214,7 @@ $pagination-hover-border-color:     tint-color($pagination-bg, 10%) !default;
 
 $pagination-active-color:           $component-active-color !default;
 $pagination-active-bg:              $component-active-bg !default;
-$pagination-active-border-color:    $pagination-active-bg !default;
+$pagination-active-border-color:    $pagination-border-color !default;
 
 $pagination-disabled-color:         $white !default;
 $pagination-disabled-bg:            tint-color($pagination-bg, 60%) !default;
@@ -1445,9 +1446,9 @@ $alert-margin-bottom:           1rem !default;
 $alert-border-radius:           $border-radius !default;
 $alert-link-font-weight:        $font-weight-bold !default;
 $alert-border-width:            $border-width !default;
-$alert-bg-scale:                -80% !default;
-$alert-border-scale:            -70% !default;
-$alert-color-scale:             40% !default;
+$alert-bg-scale:                60% !default;
+$alert-border-scale:            -60% !default;
+$alert-color-scale:             -60% !default;
 $alert-dismissible-padding-r:   $alert-padding-x * 3 !default; // 3x covers width of x plus default padding on either side
 // scss-docs-end alert-variables
 
@@ -1478,10 +1479,10 @@ $list-group-border-radius:          $border-radius !default;
 
 $list-group-item-padding-y:         $spacer * .5 !default;
 $list-group-item-padding-x:         $spacer !default;
-$list-group-item-bg-scale:          -80% !default;
-$list-group-item-color-scale:       40% !default;
+$list-group-item-bg-scale:          60% !default;
+$list-group-item-color-scale:       -60% !default;
 
-$list-group-hover-bg:               $gray-100 !default;
+$list-group-hover-bg:               shade-color($list-group-bg, 20%) !default;
 $list-group-active-color:           $component-active-color !default;
 $list-group-active-bg:              $component-active-bg !default;
 $list-group-active-border-color:    $list-group-active-bg !default;
@@ -1489,11 +1490,11 @@ $list-group-active-border-color:    $list-group-active-bg !default;
 $list-group-disabled-color:         $gray-500 !default;
 $list-group-disabled-bg:            $list-group-bg !default;
 
-$list-group-action-color:           $gray-700 !default;
+$list-group-action-color:           $body-color !default;
 $list-group-action-hover-color:     $list-group-action-color !default;
 
 $list-group-action-active-color:    $body-color !default;
-$list-group-action-active-bg:       $gray-200 !default;
+$list-group-action-active-bg:       shade-color($list-group-hover-bg, 20%) !default;
 // scss-docs-end list-group-variables
 
 
