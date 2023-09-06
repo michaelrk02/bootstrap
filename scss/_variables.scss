@@ -8,12 +8,12 @@
 // scss-docs-start gray-color-variables
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
+$gray-200: #f7f7f9 !default;
+$gray-300: #eceeef !default;
 $gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
+$gray-500: #aaa !default;
+$gray-600: #888 !default;
+$gray-700: #5a5a5a !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
@@ -36,16 +36,16 @@ $grays: (
 // fusv-enable
 
 // scss-docs-start color-variables
-$blue:    #0d6efd !default;
+$blue:    #007bff !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
-$pink:    #d63384 !default;
-$red:     #dc3545 !default;
+$pink:    #e83e8c !default;
+$red:     #ff7851 !default;
 $orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #198754 !default;
+$yellow:  #ffce67 !default;
+$green:   #56cc9d !default;
 $teal:    #20c997 !default;
-$cyan:    #0dcaf0 !default;
+$cyan:    #6cc3d5 !default;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -69,7 +69,7 @@ $colors: (
 
 // The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
 // See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
-$min-contrast-ratio:   4.5 !default;
+$min-contrast-ratio:   1.45 !default;
 
 // Customize the light and dark text colors for use in our color contrast function.
 $color-contrast-dark:      $black !default;
@@ -298,14 +298,14 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
+$primary:       #81c167 !default;
+$secondary:     #f3969a !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
-$dark:          $gray-900 !default;
+$dark:          $gray-700 !default;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -399,14 +399,14 @@ $position-values: (
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
+$body-color:                $gray-700 !default;
 $body-text-align:           null !default;
 
 // Links
 //
 // Style anchor elements.
 
-$link-color:                              $primary !default;
+$link-color:                              $info !default;
 $link-decoration:                         underline !default;
 $link-shade-percentage:                   20% !default;
 $link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
@@ -477,7 +477,7 @@ $container-padding-x: $grid-gutter-width !default;
 // Define common padding and border radius sizes and more.
 
 // scss-docs-start border-variables
-$border-width:                1px !default;
+$border-width:                2px !default;
 $border-widths: (
   1: 1px,
   2: 2px,
@@ -492,9 +492,9 @@ $border-color-translucent:    rgba($black, .175) !default;
 // scss-docs-end border-variables
 
 // scss-docs-start border-radius-variables
-$border-radius:               .375rem !default;
-$border-radius-sm:            .25rem !default;
-$border-radius-lg:            .5rem !default;
+$border-radius:               .4rem !default;
+$border-radius-sm:            .3rem !default;
+$border-radius-lg:            .6rem !default;
 $border-radius-xl:            1rem !default;
 $border-radius-2xl:           2rem !default;
 $border-radius-pill:          50rem !default;
@@ -540,8 +540,8 @@ $aspect-ratios: (
 
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-sans-serif:      "Nunito", sans-serif !default;
+$font-family-monospace:       "Roboto Mono", monospace !default;
 // stylelint-enable value-keyword-case
 $font-family-base:            var(--#{$prefix}font-sans-serif) !default;
 $font-family-code:            var(--#{$prefix}font-monospace) !default;
@@ -589,9 +589,9 @@ $font-sizes: (
 $headings-margin-bottom:      $spacer * .5 !default;
 $headings-font-family:        null !default;
 $headings-font-style:         null !default;
-$headings-font-weight:        500 !default;
+$headings-font-weight:        900 !default;
 $headings-line-height:        1.2 !default;
-$headings-color:              null !default;
+$headings-color:              $body-color !default;
 // scss-docs-end headings-variables
 
 // scss-docs-start display-headings
@@ -623,7 +623,7 @@ $text-muted:                  $gray-600 !default;
 $initialism-font-size:        $small-font-size !default;
 
 $blockquote-margin-y:         $spacer !default;
-$blockquote-font-size:        $font-size-base * 1.25 !default;
+$blockquote-font-size:        $font-size-base !default;
 $blockquote-footer-color:     $gray-600 !default;
 $blockquote-footer-font-size: $small-font-size !default;
 
@@ -1466,7 +1466,7 @@ $progress-bar-transition:           width .6s ease !default;
 // List group
 
 // scss-docs-start list-group-variables
-$list-group-color:                  $gray-900 !default;
+$list-group-color:                  $gray-700 !default;
 $list-group-bg:                     $white !default;
 $list-group-border-color:           rgba($black, .125) !default;
 $list-group-border-width:           $border-width !default;
@@ -1488,7 +1488,7 @@ $list-group-disabled-bg:            $list-group-bg !default;
 $list-group-action-color:           $gray-700 !default;
 $list-group-action-hover-color:     $list-group-action-color !default;
 
-$list-group-action-active-color:    $body-color !default;
+$list-group-action-active-color:    $gray-700 !default;
 $list-group-action-active-bg:       $gray-200 !default;
 // scss-docs-end list-group-variables
 

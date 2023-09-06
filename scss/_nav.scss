@@ -123,8 +123,9 @@
 
   .nav-link.active,
   .show > .nav-link {
-    color: var(--#{$prefix}nav-pills-link-active-color);
-    @include gradient-bg(var(--#{$prefix}nav-pills-link-active-bg));
+    color: $gray-700;
+    background-color: tint-color($nav-pills-link-active-bg, 80);
+    border: $border-width solid $nav-pills-link-active-bg;
   }
 }
 
