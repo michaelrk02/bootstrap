@@ -74,11 +74,14 @@
     border: var(--#{$prefix}nav-tabs-border-width) solid transparent;
     @include border-top-radius(var(--#{$prefix}nav-tabs-border-radius));
 
+    color: var(--#{$prefix}emphasis-color);
+
     &:hover,
     &:focus {
       // Prevents active .nav-link tab overlapping focus outline of previous/next .nav-link
       isolation: isolate;
-      border-color: var(--#{$prefix}nav-tabs-link-hover-border-color);
+      background-color: $nav-tabs-link-hover-bg;
+      color: color-contrast($nav-tabs-link-hover-bg);
     }
   }
 
@@ -86,7 +89,8 @@
   .nav-item.show .nav-link {
     color: var(--#{$prefix}nav-tabs-link-active-color);
     background-color: var(--#{$prefix}nav-tabs-link-active-bg);
-    border-color: var(--#{$prefix}nav-tabs-link-active-border-color);
+    border-color: $nav-tabs-link-active-border-color;
+    border-width: $nav-tabs-link-active-border-width;
   }
 
   .dropdown-menu {
@@ -111,6 +115,12 @@
 
   .nav-link {
     @include border-radius(var(--#{$prefix}nav-pills-border-radius));
+
+    &:hover,
+    &:focus {
+      background-color: var(--#{$prefix}nav-pills-link-active-bg);
+      color: var(--#{$prefix}nav-pills-link-active-color);
+    }
   }
 
   .nav-link.active,
@@ -118,6 +128,13 @@
     color: var(--#{$prefix}nav-pills-link-active-color);
     @include gradient-bg(var(--#{$prefix}nav-pills-link-active-bg));
   }
+}
+
+.nav-pills-light {
+  --#{$prefix}nav-pills-link-active-color: #{$black};
+  --#{$prefix}nav-pills-link-active-bg: #{$white};
+  --#{$prefix}nav-link-color: #{$white};
+  --#{$prefix}nav-link-disabled-color: rgba(255, 255, 255, 0.5);
 }
 
 
